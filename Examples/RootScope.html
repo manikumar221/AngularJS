@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js">
+    </script>
+    <script>
+        var myApp = angular.module('myApp', []);
+
+        function controllerOne($scope, $rootScope)
+        {
+            $rootScope.name = 'From Rootscope set in controllerOne';
+        }
+
+        function controllerTwo($scope, $rootScope)
+        {
+            $scope.name2 = $rootScope.name;
+        }
+    </script>
+</head>
+
+<body>
+<div style="border: 5px solid gray; width: 300px;">
+    <div ng-controller="controllerOne">
+        Setting the rootscope in controllerOne
+    </div>
+    <div ng-controller="controllerTwo">
+        Hello, {{name2}}!
+    </div>
+    <br />
+</div>
+</body>
+
+</html>
