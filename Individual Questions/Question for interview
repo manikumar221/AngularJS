@@ -246,4 +246,56 @@ Let's start using AngularJS. What would be the first step that you need to do? T
       E.g. - For Example If we want to define Indian Currency Symbol then we have to use (Unicode-value) or (Hexa-Decimal value)
       Indian Currency {{amount | currency:"&# 8377"}}
 
-==>  
+==> What is a Factory method in AngularJS?
+    -------------------------------------
+    Answer
+
+    AngularJS Factory: the purpose of Factory is also the same as Service, however in this case we create a new object and add functions as properties of this object and at the end we return this object.
+
+    Factories module.factory( 'factoryName', function );
+
+    Example
+    <div ng-app="Myapp">
+        <div ng-controller="exampleCtrl">
+            <input type="text" ng-model="num.firstnumber" />
+            <input type="text" ng-model="num.secondnumber" />
+            <input type="button" ng-click="Factoryclick()" value="Factoryclick" />
+            <input type="button" ng-click="servclick()" value="Serviceclick" /> factory result {{facresult}} service result {{secresult}}
+        </div>
+    </div>
+    var myapp = angular.module('Myapp', []);
+    myapp.controller('exampleCtrl', ['$scope', '$http', 'factories', 'services', function (scope, http, fac, ser)
+    {
+    scope.Factoryclick = function ()
+    {
+    var firstnumber = parseInt(scope.num.firstnumber);
+    var secondnumber = parseInt(scope.num.secondnumber);
+    scope.facresult = fac.sumofnums(firstnumber, secondnumber);
+    }
+    scope.servclick = function ()
+    {
+    var firstnumber = parseInt(scope.num.firstnumber);
+    var secondnumber = parseInt(scope.num.secondnumber);
+    debugger;
+    scope.secresult = ser.sersumofnums(firstnumber, secondnumber);
+    }
+    }]);
+    myapp.factory('factories', function ($http)
+    {
+    return {
+    sumofnums: function (a, b)
+    {
+    return a + b;
+    }
+    }
+    });
+    myapp.service('services', function ($http)
+    {
+    debugger;
+    this.sersumofnums = function (a, b)
+    {
+    return a + b;
+    };
+    });
+
+    When to use Factory: It is just a collection of functions like a class. Hence, it can be instantiated in different controllers when you are using it with a constructor function.
