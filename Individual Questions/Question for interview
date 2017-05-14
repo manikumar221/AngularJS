@@ -1,0 +1,249 @@
+==>What is AngularJS?
+-------------------------
+
+Answer
+
+AngularJS has been introduced by the giant, Google. It is a framework that helps you to create dynamic Web apps. Normally, AngularJS uses HTML as the backbone. AngularJS creates extended HTML tags that can be used as normal HTML tags. These tags will help you to write an efficient code. The interesting fact is that you can reduce the lines of code  you may need to write when you use normal JavaScript.
+
+AngularJS is an open-source JavaScript framework developed by Google. It is a structural framework for dynamic Web apps. It is easy to update and get information from your HTML document. It helps in writing a proper maintainable architecture, that can be tested at a client side code.
+
+This framework is developed on MVC (Model-View-Controller) design pattern.
+It provides full featured SPA (Single Page Application) framework.
+It supports Dependency Injection.
+It supports two-way data binding.
+It provides routing features.
+Testing was designed right from the beginning; so you can build robust tests.
+For DOM manipulation, jqLite is built-in; which is kind of like the Mini-Me of jQuery.
+Separation of the client side of an Application from the Server side.
+The AngularJS framework uses Plain Old JavaScript Objects(POJO), it doesn’t need the getter or setter functions.
+Using the code
+
+Let's start using AngularJS. What would be the first step that you need to do? That would be to include the relevant JavaScript file as in the following:
+
+<script src="~/Script/angular.min.js"></script>
+
+
+==> So why use AngularJS?
+--------------------------
+
+• AngularJS uses directives to add new mark-ups to HTML and turns static HTML files in to something dynamic.
+  It is an innovative approach to incorporating HTML and developing big web applications.
+
+• AngularJS organizes views, controllers, directives, filters and such other elements in to separate modules.
+  This division becomes convenient for building and managing an application.
+
+• AngularJS has a built-in dependency injection system and is unit-testable.
+
+• AngularJS uses data-binding directives to provide a projection of the model to the application view.
+  It automates synchronization of data between model and view components. This allows developers to avoid writing a
+  amount of boilerplate code.
+
+• AngularJS has a built-in template engine consisting of plain HTML pages (views) as well as controllers written in
+  JavaScript to build rich user interfaces.
+
+• AngularJS uses directives to extend HTML dialect by creating new HTML elements and attributes as well as
+  custom HTML tags that work as new widgets.
+
+==>Explain Directives in AngularJS?
+   --------------------------------
+
+   AngularJS directives are only used to extend HTML and DOM elements' behavior. These are the special attributes, that start with ng- prefix, that tell AngularJS's HTML compiler ($compile) to attach a specified behavior to that DOM element.
+
+   AngularJS has a set of built-in directives like
+
+   ngBind,
+   ngModel
+   ngClass
+   ngApp
+   ngInit
+   ngRepeat
+   We can create our own directives for Angular to use them in our AngularJS Application with the controllers and services too. In this article, we’ll learn about some most important built-in directives like: ng-app, ng-init, ng-model, ng-bind and ng-repeat.
+
+   ng-app:
+   ------
+
+   It is the most important directive for an Angular Application, which is used to indicate starting of an Angular Application to AngularJS HTML compiler ($compile), like a “Main()” function in any compile time language like C#, Java or C++ etc. If we do not use this directive first and directly try to write other directives, it gives an error.
+
+   ng-init:
+   ---------
+   ng-init directive is used to initialize an AngularJS Application data variable's inline statement, so that we can use those in the specified block where we declare them. It is like a local member of that ng-app and it can be a value or a collection of the values and as an array, it directly supports JSON data.
+
+   ng-model:
+   ---------
+   ng-model directive is used to define the model/variables value to be used in AngularJS Application’s HTML controls like <input type=’text’/> and it also provides two-way binding behavior with the model value. In some cases, it’s also used for databinding.
+
+   ng-bind:
+   --------
+   ng-bind directive is also used to bind the model/variable's value to AngularJS Applications HTML controls as well as with HTML tags attributes like: <p/>, <span/> and more, but it does not support two way binding. We can just see the output of the model values.
+
+   ng-repeat:
+   ----------
+   ng-repeat directive is used to repeat HTML statements. Ng-repeat works the same as for each loop in C#, Java or PHP on a specific collection item like an array.
+
+
+ ==> What are expressions in AngularJS?
+    ------------------------------------
+    Answer
+
+    Expressions in AngularJS are just like JavaScript code snippets. JavaScript code is usually written inside double braces: {{expression}}. In other words, Angular Expressions are JavaScript code snippets with limited sub-set. Expressions are included in the HTML elements.
+
+    Like JavaScript expressions, AngularJS expressions can also have various valid expressions. We can use the operators between numbers and strings, literals, objects and arrarys inside the expression {{ }}. For example,
+
+    {{ 2 + 2 }} (numbers)
+    {{Name + " " + email}} (string)
+    {{ Country.Name }} (object)
+    {{ fact[4] }} (array)
+
+
+    Example::
+    ------------
+    <div ng-controller="appController">
+        <span>
+    4+5 = {{4+5}}
+    </span>
+        <br />
+        <br />
+        <span ng-init="quantity=5;cost=25">
+    Total Cost = {{quantity * cost}}
+    </span>
+    </div>
+
+    ==> What is $scope in AngularJS?
+       -----------------------------
+       Answer
+
+       $scope in AngularJS is an object which refers to an application model. It is an object that binds view (DOM element) with the controller. In controller, model data is accessed via $scope object. As we know, AngularJS supports MV* pattern, $scope object becomes the model of MV*.
+
+       The $scope is a special JavaScript object. Both View and controller have access to the scope object. It can be used for communication between view and controller. Scope object contains both data and functions. Every AngularJS application has a $rootScope that is the top most scope created on the DOM element which contains the ng-app directive. It can watch expressions and propagate events.
+
+       events
+
+       Characteristics of scope object:
+       --------------------------------
+       It provides the APIs to observe model (example $watch).
+       It can be nested, so that it limits access to the properties. Nested scopes are either child scope or isolated scope.
+       It provides the APIs to propagate any model changes from the outside of "Angular realm" (example $apply).
+       It provides context against the expression to be evaluated.
+       Example
+
+       In the following example, I have created three controllers: parentController, firstChildControllerand secondChildController and defined one property in each controller; parentName, level1name, and level2name respectively. Here controllers are attached with DOM elements in a nested way.
+
+       As described above, AngularJS evaluates expressions with current associated scope and then it searches in parent scope and so on until the root scope is reached.
+
+       TestAngularJs.html
+       <!DOCTYPE html>
+       <html>
+
+       <head>
+           <title>AngularJS Test Application</title>
+           <script src="angular.js"></script>
+       </head>
+
+       <body ng-app="myapp">
+           <h2>AngularJS - Scope Inheritance</h2>
+           <div ng-controller="ParentController">
+               <div ng-controller="firstChildController">
+                   <div ng-controller="secondChildController">
+                       <p>Parent Name:{{parentName}}</p>
+                       <p>First Child Name:{{level1name}}</p>
+                       <p>Second Child Name:{{level2name}}</p>
+                   </div>
+               </div>
+           </div>
+
+           <script>
+               var app = angular.module("myapp", []);
+
+               app.controller("ParentController", function($scope)
+               {
+                   $scope.parentName = "Parent Controller";
+               });
+
+               app.controller("firstChildController", function($scope)
+               {
+                   $scope.level1name = "First Child Controller";
+               });
+               app.controller("secondChildController", function($scope)
+               {
+                   $scope.level2name = "Second Child Controller";
+               });
+           </script>
+       </body>
+
+       </html>
+
+ ==>  What is “$rootScope” in AngularJS?
+      ----------------------------------
+      Answer
+
+      A scope provides a separation between View and its Model. Every application has a $rootScope provided by AngularJS and every other scope is its child scope.
+
+      Using $Rootscope
+
+      Using rootscope we can set the value in one controller and read it from the other controller.
+
+      <!DOCTYPE html>
+      <html ng-app="myApp">
+
+      <head>
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js">
+          </script>
+          <script>
+              var myApp = angular.module('myApp', []);
+
+              function controllerOne($scope, $rootScope)
+              {
+                  $rootScope.name = 'From Rootscope set in controllerOne';
+              }
+
+              function controllerTwo($scope, $rootScope)
+              {
+                  $scope.name2 = $rootScope.name;
+              }
+          </script>
+      </head>
+
+      <body>
+          <div style="border: 5px solid gray; width: 300px;">
+              <div ng-controller="controllerOne">
+                  Setting the rootscope in controllerOne
+              </div>
+              <div ng-controller="controllerTwo">
+                  Hello, {{name2}}!
+              </div>
+              <br />
+          </div>
+      </body>
+
+      </html>
+
+      As we know, Rootscope is the top-level data container in AngularJs, we can keep any data in rootscope and read it when needed.
+
+ ==>  Explain currency filter in AngularJS?
+      ------------------------------------
+      Answer
+
+      One of the filters in AngularJS is the Currency Filter. This “currency” filter includes the “$” Dollar Symbol as the default. So we can use the following code as the html template format of Currency Filter.
+
+      {{ currency_expression | currency : symbol : fractionSize}}
+
+      How to use Currency Filter in AngularJS
+
+      There are two ways by which we can use Currency Filter.
+
+      Default
+
+      If we did not provide any currency symbol then by default Dollar-Sign will be used; we can use it as follows:
+
+      <!-- by default -->
+
+      Default Currency {{amount | currency}}
+
+      User Defined
+
+      To use different type of currency symbols we have to define our own symbol by using the unicode or Hexa-Decimal code of that Currency.
+
+      E.g. - For Example If we want to define Indian Currency Symbol then we have to use (Unicode-value) or (Hexa-Decimal value)
+      Indian Currency {{amount | currency:"&# 8377"}}
+
+==>  
