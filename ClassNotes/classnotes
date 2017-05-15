@@ -1,0 +1,1121 @@
+- HTML Stands for Hypertext markup Language.
+
+ - HTML Used to Develop the Web Pages.
+
+ - Webpages will provide the services over the web.
+
+ - Ingenaral we will prepare the webpages by using tags.
+
+ - tags technically we call elements.
+
+ - elements have "starting element" and "ending element"
+
+  Syntax.
+
+    <starting_element>Content</ending_element>
+
+Basic Sturucture of Webpage.
+
+------Declaration------
+
+------ root element -----
+
+----- head section -----
+
+---- body section ----
+
+
+Ex.
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        //Declare the Metadata.
+        Ex.
+            title
+            meta
+    </head>
+
+    <body>
+        //Main Content
+    </body>
+</html>
+
+
+HTML Elements.
+
+1.<html></html>   -- it is a root element of webpage
+
+2.<head></head>   -- used to declare the head section
+
+                  -- in genaral head section used to declare metadata.
+
+                        Ex.
+                            title
+                            meta
+
+                  -- head section is the optional.
+
+3.<body></body>      -- used to declare the main content for the web page
+
+
+4.<title></title>    -- used to declare the title for the webpage.
+
+5.<meta></meta>      -- used to declare the standard to develop the webpage.
+
+6.<b></b>            -- used to make the text as the bold on webpage.
+
+7.<i></i>           -- used to make the text as the italic.
+
+8.<font></font>      -- define varity of font styles on webpage
+
+9.<center></center>     -- used to display the text on the center of webpage.
+
+10.<u></u>              -- used to underline the text of webpage.
+
+
+EX::
+-------
+
+<!DOCTYPE html>                             //Declaration
+<html lang="en">                            //root element with lang attribute
+<head>                                      //head section starts
+    <meta charset="UTF-8">                  //used to declare standard
+    <title>This is my First Webpage</title> // used to declare the title for the webpage
+</head>                                     //ending of head section
+<body>                                      //starting of bodu section
+    Welcome to First Webpage                //WebpageContent
+</body>                                     //ending of main section (body)
+</html>                                     //ending of webpage
+
+
+
+
+                                           INTRODUCTION
+                                           ------------
+
+
+
+
+
+INTRODUCTION
+-----------------------
+1.What is AngularJS.
+
+2.Advantages Of AngularJS.
+
+3.Disadvantages Of AngularJS.
+
+4.Key Features Of AngularJS
+
+5.Comparision Of AngularJS  -  Angular2
+
+                 AngularJS  -  NodeJS
+
+                 AngularJS  - reactJS
+
+
+
+What is AngularJS.
+
+    - AngularJS is a Client Side JavaScript Framework.
+
+    - AngularJS Follows the MVC Design Pattern.
+
+        M - Model (JavaScript Variables)
+
+        V - View  (HTML / HTML5 / JADE)
+
+        C - Controller (JavaScript Functions)
+
+    - AngularJS Have a So Many Predefined Modules, As a Angular Developer We Can Use Predefined Modules
+
+        1.ngAnimate
+
+                - used to develop the Animations in Angular Applications.
+
+
+        2.ngMessages
+
+                - used to perform the client side form validations.
+
+
+        3.ngStorage
+
+                - used to work with the Storages.
+
+                - we have two types of Storages.
+
+                        1.localStorage
+
+                        2.sessionStorage
+
+        4.ngRoute
+
+                - used to handle the Routings in Single Page Applications.
+
+                - ngRoute Module is the Native Module (Provided By Angular Framework(Google)).
+
+                - now a days no body using the ngRoute Module because of it's limitations.
+
+
+        5.ui.router
+
+                - used to handle the Routings in Single Page Applications.
+
+                - ui.router module is the 3rd party Module.
+
+                - now a days all most all the Angular Projects Using ui.router Module in Single Page Applications.
+
+
+
+Ex.
+
+        //Develop the Angular Application with the Following Features
+
+            1.Animations Support
+
+            2.Form Validations
+
+            3.SPA by using ui.router
+
+            5.Storages Support
+
+
+
+
+
+        index.html
+        -
+
+        <!DOCTYPE html>
+
+        <html ng-app="myApp">
+
+               //Our Application will Provide the Following Features
+
+                1.Validations
+
+                2.Routing
+
+                3.Animations
+
+                4.Storages
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+            <script>
+               angular.module("myApp",["ngMessages","ui.router","ngAnimate","ngStorage"]);
+            </script>
+        </html>
+
+
+        - Predefined Modules Eliminates the Much of the Code to Write
+
+
+
+Advantages Of AngularJS.
+
+1.As a Angular Developer We Can Directly work with the HTML DOM.
+
+    DOM Stands for Document Object Model.
+
+
+Ex.
+
+    Copy the Data From One Div to Another Div By using HTML and JavaScript.
+    index.html
+    -
+    <html>
+        <div id="div_one">Hello</div>
+        <div id="div_two"></div>
+        <button onClick="my_fun()">Copy</button>
+        <script>
+            function my_fun(){
+                document.getElementById("div_two").innerHTML = document.getElementById("div_one").value;
+            }
+        </script>
+    </html>
+
+    [Note. We Can Dependent on JavaScript to work with the HTML DOM ]
+
+
+    Copy the Data From "One Div" to "Another Div" By using AngularJS.
+
+    <html ng-app = "app">
+
+        <div ng-model="my_model">Hello</div>
+
+        <div ng-bind="my_model"></div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+
+    </html>
+
+         - Framework Starts the Execution from ng-app directive.
+
+         - When ever framework encountered the ng-model , automatically object will be created in heap memory with
+
+           Application Data.
+
+         - ng-bind directive will binds the Application Data to the HTML Output Elements.
+
+
+    [ Note. We Can Directly works with the HTML DOM By using Angular Directives ]
+
+
+
+
+2.Angular Applications are Cross Browser Compatable Applications.
+
+    - Framework will identifies the Required Plugin and Installs based on type of browser
+
+
+3.Open Source Code
+
+    - we can customize the framework accroding to application requirement.
+
+
+4. AngularJS Supports the MVC Design Pattern
+
+    M - Model
+
+    V - View
+
+    C - Controller
+
+
+5.AngularJS Supports the Two Way Data Binding.
+
+    - Automatic data synchronization between model and view with the supervision of controller called as
+
+      Two Way Data Binding.
+
+    Note . Two Way data binding also reduces the Burden on the Server.
+
+    1. in the Above Architecture we have following server requests
+
+        1.http get request
+
+                - used to fetch the data from the DataBase
+
+        2.http post request
+
+                - used to delete the data from database based to user input.
+
+        3.Async Call (AJAX Call)
+
+                - used to sync the data between DataBase and View
+
+
+        [Note . As a Programming Languages Developer we must make above all requests to meet
+
+                application requirement
+
+                    Ex.
+
+                        Java
+
+                        dot net
+
+                        php ]
+
+
+        [Note . As a ui developer we can make only two calls to meet application requirement, because
+
+                of two way data binding
+
+                    Ex.
+
+                        AngularJS
+
+                        Angular2
+
+                        reactJS ]
+
+
+
+
+        6.We can Develop Single Page Applications by using Angular Framework
+
+            - Loading the Target Templates to Source Template without Refreshing the Whole Source Template
+
+             called as Single Page Application
+
+            - Cacheing the Templates by Angular Framework Called as Template Cache.
+
+
+Disadvantages Of AngularJS.
+
+    1. Secuirity
+
+        By using AngularJS We Can Implement the Business Components at client side, so we are missing
+
+        the Secuirity
+
+
+    2. Client Should Enable the JavaScript, then only angular applications will execute
+
+
+    3. AngularJS Won't Have Any Coding Standards , so understanding the Angular Applications are difficult.
+
+************************************************************************************************************************
+                                         ANGULAR APPLICATIONS
+
+Angular Applications.
+
+    By using AngularJS We Can Create two types of Applications.
+
+    1.Static Angular Application.
+
+    2.Dynamic Angular Application.
+
+
+Static Angular Application.
+
+    - View won't interacts with the controller for dynamic data then such type of Angular Application Called as
+
+    Static Angular Application.
+
+
+Dynamic Angular Application.
+
+    - View Interacts with the Controller for dynamic data then such type of Angular Application Called as
+
+      dynamic Angular Application.
+
+
+Bower
+
+    Bower is the Automation Tool, used to download the Required Resources (Softwares) to Develop Web Application.
+
+    Bower is the Automation Tool provided by NodeJS.
+
+bower components
+
+1.bower.json
+
+  - used to mention required resources to develop web application.
+
+
+2. .bowerrc
+
+    - used to give the path for resources downloading by bower.
+
+
+bower.json
+-
+{
+    "name":"nareshit",
+    "dependencies":{
+            "angular" : "~1.6.0",
+            "bootstrap" : "~3.3.6"
+    }
+}
+
+
+
+.bowerrc
+-
+
+{
+    "directory":"bower_components"
+}
+
+
+
+> bower install
+
+
+ - When evee we run the bower , automatically bower will interact with the Server (NodeJS).
+
+ - Node Server Automatically Interacts with the Git Repository for Resources.
+
+ - Git Repository will download the Required Resources for Web Application Development based on "bower.json component"
+
+ - "~" will downloads the latest version of resources.
+
+ - "^" will download the exact version of resources
+
+
+
+Steps to Create the Static Angular Application.
+-
+
+Step 1.
+
+    Download the Angular Framework by using bower.
+
+
+
+Step 2.
+
+     Create the View.
+
+ Ex.
+     index.html
+
+
+index.html
+-
+
+<!DOCTYPE html>
+
+<html ng-app>
+
+    <input type="number" ng-model="model_one">
+
+    <input type="number" ng-model="model_two">
+
+    <h1 style="color:red" ng-bind="model_one+model_two">
+
+     <!--<h1 style="color: green">{{model_one+model_two}}</h1>-->
+
+   <script src="bower_components/angular/angular.min.js"></script>
+</html>
+
+
+    ********************************
+AngularApplications
+
+    StaticAngularApplication
+
+        bower.json
+
+        .bowerrc
+
+        index.html
+    *********************************
+
+
+Steps to Create Dynamic Angular Application
+-
+
+    - If View  Interacts with the Controller for Dynamic Data , then Such type Of Angular Application
+
+      Called as Dynamic Angular Application.
+
+
+
+
+Step 1.
+    Download Angular Framework by using bower.
+
+
+Step 2.
+    Load the Angular Framework.
+
+
+Step 3.
+    Declare the logical name of application with ng-app directive
+
+Step 4.
+    Declare the Controller by using ng-controller directive
+
+Step 5.
+    Instantiate the Module (Getting the Whole page Control Ex. index.html)
+
+
+Step 6.
+        Implement the Controller
+
+
+EX;
+
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <div ng-controller="ctrl">
+        <h1 style="color: red">{{var_one+"<==>"+var_two+"<==>"+var_three}}</h1>
+    </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/ctrl.js"></script>
+
+    var app = angular.module("app",[]);
+
+    app.controller("ctrl", ctrl);
+
+    ctrl.$inject=["$scope"];
+
+    function ctrl($scope) {
+        $scope.var_one = "Angular2+'...'+AngularJS";
+        $scope.var_two = "NodeJS";
+        $scope.var_three = "MongoDB"
+    };
+</html>
+
+Creating the Dynamic Angular Application with Coding Standards.
+
+Step 1.
+
+    Create the Directory Structure.
+
+    *************************************
+ DynamicAngularApplication
+
+        bower.json
+
+        .bowerrc.json
+
+        index.html
+
+        app.js
+
+        controllers
+
+            ctrl.js
+
+    **************************************
+
+
+Step 2.
+
+    Instantiate the Module.
+
+app.js
+-
+var app = angular.module("app" , []);
+
+   (Object)              (Logical Name)
+
+
+
+
+Step 3.
+    Implement the Controller.
+
+
+app.controller("ctrl" , ctrl);   // arg1 - name of the controller
+                                    arg2 - name of the user defined function to implement controller
+
+
+ctrl.$inject=["$scope"];       // Indicating the Relation Between User Defined Function and Predefined Objects
+
+
+function ctrl($scope){
+    $scope.var_one = "AngularJS";
+    $scope.var_two = "NodeJS";
+    $scope.var_three = "MySQL";
+
+}
+
+
+Step 4.
+    Create the View
+
+    <html ng-app = "app">
+        <div ng-controller="ctrl">
+            <h1>{{var_one+"...."+var_two+"...."+var_three}}</h1>
+        </div>
+        <script src="bower_components / angular / angular.min.js"></script>
+        <script src="app.js"></script>
+        <script src="controllers / ctrl.js"></script>
+    </html>
+
+**************************************************************************************************************************************
+                                        DIRECTIVES
+                                        ----------
+Directives.
+
+    - Directives will enhance the HTML Capabilities.
+
+    - we have two types of directives.
+
+        1.Predefined Directives.
+
+        2.Custom Directives.
+
+Predefined Directives.
+
+    - The Directives Given By Framework called as Predefined Directives.
+
+Custom Directives.
+
+    - The Directives Developed by the Developers Based on Application Requirement called as Custom Directives.
+
+
+1.ng-app
+
+    - Angular Framework Starts the Execution from ng-app directive.
+
+    - ng-app directive used to assign the logical name to the web application.
+
+    - if our web application is static then logical name is the optional , otherwise mandatory(Dynamic Application)
+
+    - We Can Have Only one ng-app directive per web application.
+
+    - Running the Angular Application forcefully with out "ng-app" directive called as Manual Bootstrap.
+
+ngAppDemo_1.html
+-
+<!DOCTYPE html>
+<html>
+    <div ng-app>
+        <h1 style="color:red">Addition.{{10+10}}</h1>
+        <div>
+            <h1 style="color:green">Subtraction.{{20-10}}</h1>
+        </div>
+    </div>
+
+    <div>
+        <h1 style="color:blue">Multiplication.{{10*10}}</h1>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+</html>
+
+O/P.
+
+    Addition . 20
+
+    Subtraction . 10
+
+    Multiplication . {{10*10}}
+
+ngAppDemo_2.html
+-
+
+<!DOCTYPE html>
+
+<html>
+    <h1 style="color:red">Addition.{{10+10}}</h1>
+    <h1 style="color:green">Subtraction.{{20-10}}</h1>
+    <h1 style="color:blue">Multiplication.{{10*10}}</h1>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        angular.bootstrap(document);
+    </script>
+</html>
+
+
+ngAppDemo_3.html
+-
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <div ng-controller="ctrl">
+        <h1>{{var_one}}</h1>
+    </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+        app.controller("ctrl",ctrl);
+        ctrl.$inject=["$scope"];
+        function ctrl($scope) {
+            $scope.var_one = "Data From MongoDB Soon....";
+        }
+        angular.bootstrap(document,["app"]);  //Manual Bootstrap Of Dynamic Angular Application
+    </script>
+</html>
+
+ngAppDemo_4.html
+-
+<html>
+    <div ng-app="app" ng-controller="ctrl_one">
+        {{var_one}}
+    </div>
+    <div id="my_div" ng-controller="ctrl_two">
+         {{var_two}}
+    </div>
+    var app = angular.module("app",[]);
+    app.controller("ctrl_one",ctrl_one);
+    ctrl_one.$inject=["$scope"];
+    function ctrl_one($scope){
+        $scope.var_one = "I am from Auto Bootstrap";
+    }
+     app.controller("ctrl_two",ctrl_two);
+     ctrl_two.$inject=["$scope"];
+     function ctrl_two($scope){
+          $scope.var_two = "I am from Manual Bootstrap";
+     }
+    angular.bootstrap((document.getElementById("my_div")),["app"]);
+</html>
+
+
+2.ng-controller.
+    - used to declare the controllers.
+    - we can have more than one controller per web application.
+    - in genaral we will declare controllers in view.
+
+        Ex.
+
+            <div ng-controller="ctrl">
+                //Logic Goes Here
+            </div>
+
+    - in genaral we will implement controllers in javascript.
+
+        Ex.
+            app.controller("ctrl" , ctrl);
+            ctrl.$inject=["$scope"];
+            function ctrl($scope){
+                //Logic Goes Here
+            }
+
+  EXAMPLES DEMO::
+  ---------------
+
+  1)
+
+  <!DOCTYPE html>
+  <html lang="en" ng-app="app">
+
+      <div ng-controller="ctrl_one">
+          {{var_one}}
+      </div>
+      <br>
+      <div ng-controller="ctrl_two">
+          {{var_two}}
+      </div>
+      <br>
+      <div ng-controller="ctrl_three">
+          {{var_three}}
+      </div>
+
+
+      <style>
+          div{
+              border: 1px solid darkred;
+              width: 300px;
+              height: 150px;
+              color: darkgreen;
+              text-align: center;
+              font-weight: bolder;
+          }
+      </style>
+
+      <script src="bower_components/angular/angular.min.js"></script>
+      <script>
+          var app = angular.module("app",[]);
+          app.controller("ctrl_one",ctrl_one);
+          ctrl_one.$inject=["$scope"];
+          function ctrl_one($scope) {
+              $scope.var_one="Data From NodeJS....";
+          }
+          app.controller("ctrl_two",ctrl_two);
+          ctrl_two.$inject=["$scope"];
+          function ctrl_two($scope) {
+              $scope.var_two="Data From MongoDB....";
+          }
+          app.controller("ctrl_three",ctrl_three);
+          ctrl_three.$inject=["$scope"];
+          function ctrl_three($scope) {
+              $scope.var_three="Data From Cassandra....";
+          }
+      </script>
+
+
+      2)
+
+      <!DOCTYPE html>
+      <html lang="en" ng-app="app">
+          <div class="my_class">
+              <div ng-controller="parent_controller">
+                  {{parent}}
+                  <div ng-controller="child_controller">
+                      {{child}}
+                      <div ng-controller="sub_controller">
+                          {{sub}}
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <style>
+              div.my_class div{
+                  padding: 10px;
+                  border: 1px solid tomato;
+                  text-align: center;
+                  font-weight: bolder;
+              }
+          </style>
+
+
+          <script src="bower_components/angular/angular.min.js"></script>
+          <script>
+              var app = angular.module("app",[]);
+              app.controller("parent_controller",parent_controller);
+              parent_controller.$inject=["$scope"];
+              function parent_controller($scope) {
+                  $scope.parent = "I am from parent controller";
+              }
+              app.controller("child_controller",child_controller);
+              child_controller.$inject=["$scope"];
+              function child_controller($scope) {
+                  $scope.child = "I am from child controller";
+              }
+              app.controller("sub_controller",sub_controller);
+              sub_controller.$inject=["$scope"];
+              function sub_controller($scope) {
+                  $scope.sub = "I am from sub controller";
+              }
+          </script>
+      </html>
+
+
+      3)
+
+      <!DOCTYPE html>
+      <html lang="en" ng-app="app">
+          <h1>{{var_one}}</h1>
+          <h1>{{var_two}}</h1>
+          <h1 style="color: red" ng-controller="ctrl_one" ng-bind="var_two"></h1>
+          <h1 style="color: green" ng-controller="ctrl_two" ng-bind="var_one"></h1>
+          <script src="bower_components/angular/angular.min.js"></script>
+          <script>
+              var app = angular.module("app",[]);
+              app.controller("ctrl_one",ctrl_one);
+              ctrl_one.$inject=["$rootScope"];
+              function ctrl_one($rootScope) {
+                  $rootScope.var_one = "I am from controller one";
+              }
+              app.controller("ctrl_two",ctrl_two);
+              ctrl_two.$inject=["$rootScope"];
+              function ctrl_two($rootScope) {
+                  $rootScope.var_two = "I am from controller two";
+              }
+          </script>
+      </html>
+
+      4)
+
+      <!DOCTYPE html>
+      <html lang="en" ng-app="app">
+
+          <h1 style="color: green">{{my_fun()}}</h1>
+          <div ng-controller="ctrl">
+              <h1 style="color: red">{{my_fun()}}</h1>
+          </div>
+
+          <script src="bower_components/angular/angular.min.js"></script>
+          <script>
+              var app = angular.module("app",[]);
+              app.controller("ctrl",ctrl);
+              ctrl.$inject=["$rootScope","$scope"];
+              function ctrl($rootScope,$scope) {
+                  $scope.sub_one = "Angular2";
+                  $scope.sub_two = "NodeJS";
+                  $scope.sub_three = "MongoDB";
+                  $rootScope.my_fun = function () {
+                      return $scope.sub_one+"..."+$scope.sub_two+"..."+$scope.sub_three;
+                  };
+              };
+          </script>
+      </html>
+
+
+
+  3)::  ng-repeat:
+  ------------------
+
+  <!-- <!DOCTYPE html>
+  <html ng-app>
+  	<p style="color: red;" ng-repeat="x in [10,20,30,40,50]">
+  		{{x}}...{{$index}}...{{$first}}...{{$last}}...{{$middle}}...{{$even}}...{{$odd}}
+  	</p>
+  	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  </html> -->
+
+
+
+  <!-- <!DOCTYPE html>
+  <html ng-app="app" ng-controller="ctrl">
+  	<h1 style="color: red;" ng-repeat="x in data">
+  		{{x}}
+  	</h1>
+  	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  	<script type="text/javascript">
+  		var app = angular.module("app",[]);
+  		app.controller("ctrl",ctrl);
+  		ctrl.$inject=["$scope"];
+  		function ctrl($scope){
+  			$scope.data = ["AngularJS" , "Angular2" , "Angular4" , "NodeJS","MongoDB"];
+  		}
+  	</script>
+  </html>
+   -->
+
+
+
+
+   <!DOCTYPE html>
+   <html ng-app="app" ng-controller="ctrl">
+    	<table class="table table-responsive">
+   		<tr>
+   			<th>id</th>
+   			<th>sub</th>
+   			<th>rank</th>
+   		</tr>
+   		<tr ng-repeat="x in data">
+   			<td>{{x.id}}</td>
+   			<td>{{x.sub}}</td>
+   			<td>{{x.rank}}</td>
+   		</tr>
+   	</table>
+
+   	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  	<script type="text/javascript">
+  		var app = angular.module("app",[]);
+  		app.controller("ctrl",ctrl);
+  		ctrl.$inject=["$scope"];
+  		function ctrl($scope){
+  			$scope.data = [{'id':1,'sub':'AngularJS','rank':1},
+  			               {'id':2,'sub':'Angular2','rank':2},
+  			               {'id':3,'sub':'Angular4','rank':4},
+  			               {'id':4,'sub':'NodeJS','rank':3},
+  			               {'id':5,'sub':'MongoDB','rank':5}
+  			              ];
+  		}
+  	</script>
+   </html>
+
+
+
+   4.ng-options.
+       - used to populate the values to the dropdown.
+
+
+   Syntax.
+
+   <select
+       ng-model="my_model"
+       ng-options="model_values as dropdown_values for iteration_variable in array"></select>
+
+
+   Ex.
+
+   data = ["Hello_1" , "Hello_2" , "Hello_3" , "Hello_4" , "Hello_5"];
+
+   <select ng-model="my_model" ng-options = "x as x for x in data"></select>
+
+
+
+   data_one  = [{'id':1,'name':'Hello_1'},
+               {'id':2,'name':'Hello_2'},
+               {'id':3,'name':'Hello_3'},
+               {'id':4,'name':'Hello_4'},
+               {'id':5,'name':'Hello_5'}];
+
+
+
+
+   <slect ng-model="model_one" ng-options="x.id as x.name for x in data_one">
+
+
+   <select ng-model="model-two" ng-options = "x.name as x.id for x in data_one">
+
+
+   <select ng-model="model-two" ng-options = "x.id as x.id for x in data_one">
+
+
+   <select ng-model="model-two" ng-options = "x.name as x.name for x in data_one">
+
+
+   EX::
+   ----
+
+   <!DOCTYPE html>
+   <html lang="en" ng-app="app" ng-controller="ctrl">
+
+       <select ng-model="model_one" ng-options="x as x for x in data">
+           <option value="">--Choose One--</option>
+       </select>
+       <h1>{{model_one}}</h1>
+
+       <br><br>
+       <select ng-model="model_two" ng-options="x.id as x.sub for x in data_one">
+           <option value="">--Choose Sub--</option>
+       </select>
+       <h1>{{model_two}}</h1>
+
+
+       <br><br>
+       <select ng-model="model_three"
+               ng-options="x.sub as x.id for x in data_one">
+           <option value="">--Choose ID--</option>
+       </select>
+       <h1>{{model_three}}</h1>
+
+
+
+       <br><br>
+       <select ng-model="model_four"
+               ng-options="x.sub as x.sub for x in data_one">
+           <option value="">--Choose Subject--</option>
+       </select>
+       <h1>{{model_four}}</h1>
+
+
+       <br><br>
+       <select ng-model="model_five"
+               ng-options="x.id as x.id for x in data_one">
+           <option value="">--Choose ID--</option>
+       </select>
+       <h1>{{model_five}}</h1>
+
+
+
+       <script src="bower_components/angular/angular.min.js"></script>
+       <script>
+           var app = angular.module("app",[]);
+           app.controller("ctrl",ctrl);
+           ctrl.$inject=["$scope"];
+           function ctrl($scope) {
+               $scope.data = ["Option_1","Option_2","Option_3","Option_4","Option_5"];
+               $scope.data_one = [{'id':1,'sub':'AngularJS'} ,
+                                   {'id':2,'sub':'Angular2'} ,
+                                   {'id':3,'sub':'Angular4'} ,
+                                   {'id':4,'sub':'NodeJS'} ,
+                                   {'id':5,'sub':'reactJS'}];
+           }
+       </script>
+   </html>
+
+
+5.ng-init.
+    - used to declare the static data in the form of a "key&value" pairs.
+
+    - each key&value pair separated with the ";"
+
+    - key & value separated with the help of "="
+
+
+ <!DOCTYPE html>
+ <html lang="en" ng-app>
+
+
+     <div ng-init="db_user='root';
+                   db_password='root';
+                   secuirity_changes=true;
+                   list_of_tables=['emp','product','results'];
+                   emp_data=[
+                             {'id':1,'name':'Hello_1','age':20},
+                             {'id':2,'name':'Hello_2','age':22},
+                             {'id':3,'name':'Hello_3','age':24}
+                            ]">
+
+         <h1 style="color: red">{{db_user}}</h1>
+         <h1 style="color: red">{{db_password}}</h1>
+         <h1 style="color: red">{{secuirity_changes}}</h1>
+         <h1 style="color: grey" ng-repeat="x in list_of_tables"
+             ng-bind="x"></h1>
+
+         <table border="1">
+             <tr>
+                 <th>id</th>
+                 <th>name</th>
+                 <th>age</th>
+             </tr>
+             <tr ng-repeat="x in emp_data">
+                 <td>{{x.id}}</td>
+                 <td>{{x.name}}</td>
+                 <td>{{x.age}}</td>
+             </tr>
+         </table>
+
+     </div>
+
+
